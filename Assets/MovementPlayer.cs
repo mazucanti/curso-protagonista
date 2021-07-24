@@ -22,6 +22,11 @@ public class MovementPlayer : MonoBehaviour
         animator.SetFloat("X", movementAxis.x);
         animator.SetFloat("Y", movementAxis.y);
         animator.SetFloat("Vel", movementAxis.magnitude);
+        if(movementAxis.magnitude > 0.02)
+        {
+            animator.SetFloat("LastX", movementAxis.x);
+            animator.SetFloat("LastY", movementAxis.y);
+        }
     }
 
     void FixedUpdate()
