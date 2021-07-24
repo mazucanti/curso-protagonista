@@ -31,8 +31,13 @@ public class MovementPlayer : MonoBehaviour
         }
         if (collisionNPC && Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("spacebar clicked");
+            movementSpeed = 0;
             NPC.GetComponent<Interactable>().StartDialogue();
+        }
+
+        if (FindObjectOfType<DialogueManager>().endOfDialogue)
+        {
+            movementSpeed = 5f;
         }
     }
 
