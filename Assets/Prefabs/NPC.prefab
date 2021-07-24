@@ -29,7 +29,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7540219171466260255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,11 +91,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Vendedor
+    name: Nome
     sentences:
-    - "Seja bem-vindo \xE0 minha loja!"
-    - "Infelizmente o desenvolvedor ainda n\xE3o a implementou, ent\xE3o tente novamente
-      mais tarde..."
+    - text: Texto 1
+      yesNo: 0
+    - text: Texto 2
+      yesNo: 0
 --- !u!61 &916274783910505901
 BoxCollider2D:
   m_ObjectHideFlags: 0
