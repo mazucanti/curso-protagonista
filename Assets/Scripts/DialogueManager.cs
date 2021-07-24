@@ -24,6 +24,8 @@ public class DialogueManager : MonoBehaviour
 		animator.SetBool("isOpen", true);
 		nameText.text = dialogue.name;
 
+		i = 0;
+
 		sentences = new string[dialogue.sentences.Length];
 		sentences = dialogue.sentences;
 
