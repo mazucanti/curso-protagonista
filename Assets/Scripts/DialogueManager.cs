@@ -37,6 +37,7 @@ public class DialogueManager : MonoBehaviour
 		if (i == sentences.Length)
 		{
 			animator.SetBool("isOpen", false);
+			i = 0;
 			return;
 		}
 

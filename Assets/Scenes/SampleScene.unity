@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 329102491}
   - component: {fileID: 329102490}
   - component: {fileID: 329102494}
+  - component: {fileID: 329102495}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -551,6 +552,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &329102495
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329102489}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.88}
+    newSize: {x: 0.5, y: 0.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.88}
+  m_EdgeRadius: 0
 --- !u!1001 &359809197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3938,6 +3965,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2114078838}
     m_Modifications:
+    - target: {fileID: 4731156227870463291, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260248, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 1
