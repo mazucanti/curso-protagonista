@@ -46,20 +46,19 @@ public class MovementPlayer : MonoBehaviour
         rb.MovePosition(rb.position + movementAxis * movementSpeed * Time.fixedDeltaTime);
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-         if (collision.CompareTag("NPC"))
+        if (collision.collider.CompareTag("NPC"))
         {
-            Debug.Log("collision");
             collisionNPC = true;
-            NPC = collision;
+            NPC = collision.collider;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit(Collision collision)
     {
-        Debug.Log("collision exit");
-
         collisionNPC = false;
     }
+
 }

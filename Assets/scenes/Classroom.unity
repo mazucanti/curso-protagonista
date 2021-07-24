@@ -159,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 90, y: -80}
-  m_SizeDelta: {x: 20, y: 17}
+  m_SizeDelta: {x: 30, y: 17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87759321
 MonoBehaviour:
@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NO
+  m_Text: NAO
 --- !u!114 &87759322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,6 +1490,19 @@ PrefabInstance:
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
       value: Texto 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].text
+      value: "Ol\xE1, voc\xEA gostaria de formar uma equipe?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1].text
+      value: "Bom, os desenvolvedores n\xE3o implementaram essa fun\xE7\xE3o ainda...
+        Tenta depois, t\xE1?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].yesNo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Name
@@ -2934,6 +2947,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2114078838}
     m_Modifications:
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Size.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Size.y
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260248, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 1
@@ -3043,6 +3064,10 @@ PrefabInstance:
       value: Instrutor
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
       value: "Ol\xE1, eu serei o seu instrutor durante o curso de Protagonista de
         RPG."
@@ -3054,17 +3079,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[0].text
-      value: "Ol\xE1, eu serei o seu instrutor durante o curso de Protagonista de
-        RPG."
+      value: "Ol\xE1, que bom que resolveu finalmente aparecer nas aulas."
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].text
-      value: "Voc\xEA gostaria de iniciar uma batalha testo? \xC9 que temos pra hoje,
-        j\xE1 que os desenvolvedores n\xE3o criaram os advers\xE1rios ainda..."
+      value: Eu serei o seu instrutor durante o curso de Protagonista de RPG.
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].yesNo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Name
@@ -3279,7 +3302,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YES
+  m_Text: SIM
 --- !u!114 &1424476797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3415,7 +3438,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CONTINUE...
+  m_Text: CONTINUAR...
 --- !u!114 &1450528522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3685,12 +3708,20 @@ PrefabInstance:
       value: Colega 3
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
       value: Texto 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
       value: Texto 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].text
+      value: "E a\xED, cara? Acho que voc\xEA est\xE1 na turma errada!"
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Name
@@ -4442,6 +4473,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2114078838}
     m_Modifications:
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260251, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4535,12 +4570,20 @@ PrefabInstance:
       value: Colega 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
       value: Texto 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
       value: Texto 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].text
+      value: "Oi, voc\xEA \xE9 aluno novo? Nunca te vi por aqui..."
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Name
@@ -5367,6 +5410,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2114078838}
     m_Modifications:
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Size.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Size.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4731156227870463291, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_BodyType
       value: 2
@@ -5481,8 +5540,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].text
-      value: "Infelizmente os desenvolvedores ainda n\xE3o a implementaram, ent\xE3o
-        tente novamente mais tarde..."
+      value: Gostaria de entrar e dar uma olhada sem compromisso?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1].yesNo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Name
