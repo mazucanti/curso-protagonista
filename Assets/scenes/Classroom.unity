@@ -819,7 +819,7 @@ Transform:
   m_LocalScale: {x: 65.096, y: 65.096, z: 41.2}
   m_Children: []
   m_Father: {fileID: 1514506449}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &329102494
 SpriteRenderer:
@@ -3510,12 +3510,12 @@ RectTransform:
   m_Children:
   - {fileID: 1697579184}
   m_Father: {fileID: 1514506449}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 187, y: 138.2}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 188.6, y: 139}
+  m_SizeDelta: {x: 51.62, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1467333521
 MonoBehaviour:
@@ -3869,6 +3869,8 @@ RectTransform:
   - {fileID: 2101315867}
   - {fileID: 2114078838}
   - {fileID: 1467333520}
+  - {fileID: 2077983265}
+  - {fileID: 329102493}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5667,10 +5669,6 @@ PrefabInstance:
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].text
       value: Gostaria de entrar e dar uma olhada sem compromisso?
-      objectReference: {fileID: 0}
-    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
-      propertyPath: dialogue.sentences.Array.data[1].yesNo
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].yesNo
