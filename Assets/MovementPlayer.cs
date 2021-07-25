@@ -33,11 +33,13 @@ public class MovementPlayer : MonoBehaviour
         {
             movementSpeed = 0;
             NPC.GetComponent<Interactable>().StartDialogue();
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
 
         if (FindObjectOfType<DialogueManager>().endOfDialogue)
         {
             movementSpeed = 5f;
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
