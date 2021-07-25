@@ -159,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 90, y: -80}
-  m_SizeDelta: {x: 20, y: 17}
+  m_SizeDelta: {x: 30, y: 17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87759321
 MonoBehaviour:
@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NO
+  m_Text: NAO
 --- !u!114 &87759322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,32 +640,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7428861770298228674, guid: adc65b48919a81c4882f749375e58059, type: 3}
   m_PrefabInstance: {fileID: 818288998}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &288428762
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288428760}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.72999996, y: 0.67032737}
-    newSize: {x: 0.72999996, y: 0.67032737}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.72999996, y: 0.67032737}
-  m_EdgeRadius: 0
 --- !u!50 &288428763
 Rigidbody2D:
   serializedVersion: 4
@@ -1093,32 +1067,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7428861770298228674, guid: adc65b48919a81c4882f749375e58059, type: 3}
   m_PrefabInstance: {fileID: 1877290720}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &380105382
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380105380}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.72999996, y: 0.67032737}
-    newSize: {x: 0.72999996, y: 0.67032737}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.72999996, y: 0.67032737}
-  m_EdgeRadius: 0
 --- !u!50 &380105383
 Rigidbody2D:
   serializedVersion: 4
@@ -1490,6 +1438,19 @@ PrefabInstance:
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
       value: Texto 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].text
+      value: "Ol\xE1, voc\xEA gostaria de formar uma equipe?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1].text
+      value: "Bom, os desenvolvedores n\xE3o implementaram essa fun\xE7\xE3o ainda...
+        Tenta depois, t\xE1?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].yesNo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Name
@@ -1958,32 +1919,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7428861770298228674, guid: adc65b48919a81c4882f749375e58059, type: 3}
   m_PrefabInstance: {fileID: 312494425}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &763375659
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763375657}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.72999996, y: 0.67032737}
-    newSize: {x: 0.72999996, y: 0.67032737}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.72999996, y: 0.67032737}
-  m_EdgeRadius: 0
 --- !u!50 &763375660
 Rigidbody2D:
   serializedVersion: 4
@@ -2211,32 +2146,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7428861770298228674, guid: adc65b48919a81c4882f749375e58059, type: 3}
   m_PrefabInstance: {fileID: 410782878}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &825650358
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 825650356}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.72999996, y: 0.67032737}
-    newSize: {x: 0.72999996, y: 0.67032737}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.72999996, y: 0.67032737}
-  m_EdgeRadius: 0
 --- !u!50 &825650359
 Rigidbody2D:
   serializedVersion: 4
@@ -2977,6 +2886,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2114078838}
     m_Modifications:
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Size.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Size.y
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260248, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 1
@@ -3086,6 +3003,10 @@ PrefabInstance:
       value: Instrutor
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
       value: "Ol\xE1, eu serei o seu instrutor durante o curso de Protagonista de
         RPG."
@@ -3097,17 +3018,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[0].text
-      value: "Ol\xE1, eu serei o seu instrutor durante o curso de Protagonista de
-        RPG."
+      value: "Ol\xE1, que bom que resolveu finalmente aparecer nas aulas."
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].text
-      value: "Voc\xEA gostaria de iniciar uma batalha testo? \xC9 que temos pra hoje,
-        j\xE1 que os desenvolvedores n\xE3o criaram os advers\xE1rios ainda..."
+      value: Eu serei o seu instrutor durante o curso de Protagonista de RPG.
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].yesNo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Name
@@ -3129,32 +3048,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7428861770298228674, guid: adc65b48919a81c4882f749375e58059, type: 3}
   m_PrefabInstance: {fileID: 1389427678}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1315685225
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315685223}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.72999996, y: 0.67032737}
-    newSize: {x: 0.72999996, y: 0.67032737}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.72999996, y: 0.67032737}
-  m_EdgeRadius: 0
 --- !u!50 &1315685226
 Rigidbody2D:
   serializedVersion: 4
@@ -3322,7 +3215,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YES
+  m_Text: SIM
 --- !u!114 &1424476797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3458,7 +3351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CONTINUE...
+  m_Text: CONTINUAR...
 --- !u!114 &1450528522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3861,12 +3754,20 @@ PrefabInstance:
       value: Colega 3
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
       value: Texto 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
       value: Texto 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].text
+      value: "E a\xED, cara? Acho que voc\xEA est\xE1 na turma errada!"
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Name
@@ -3966,8 +3867,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2101315867}
-  - {fileID: 2077983265}
-  - {fileID: 329102493}
   - {fileID: 2114078838}
   - {fileID: 1467333520}
   m_Father: {fileID: 0}
@@ -4700,6 +4599,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2114078838}
     m_Modifications:
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260251, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4793,12 +4696,20 @@ PrefabInstance:
       value: Colega 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
       value: Texto 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
       value: Texto 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0].text
+      value: "Oi, voc\xEA \xE9 aluno novo? Nunca te vi por aqui..."
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Name
@@ -5066,7 +4977,7 @@ RectTransform:
   - {fileID: 1424476795}
   - {fileID: 87759320}
   m_Father: {fileID: 1514506449}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5213,7 +5124,7 @@ RectTransform:
   - {fileID: 1741238177}
   - {fileID: 1252802548}
   m_Father: {fileID: 1514506449}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5625,6 +5536,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2114078838}
     m_Modifications:
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Size.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Size.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4731156227870463291, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_BodyType
       value: 2
@@ -5739,8 +5666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[1].text
-      value: "Infelizmente os desenvolvedores ainda n\xE3o a implementaram, ent\xE3o
-        tente novamente mais tarde..."
+      value: Gostaria de entrar e dar uma olhada sem compromisso?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1].yesNo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Name
