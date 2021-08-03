@@ -35,6 +35,11 @@ public class MenuManager : MonoBehaviour
 
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     private IEnumerator menuEnd ()
     {
         while (!(animator.GetCurrentAnimatorStateInfo(0).IsName("MenuBoxEnd")))
