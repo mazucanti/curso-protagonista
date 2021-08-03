@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
 	public GameObject yesButton;
 	public GameObject noButton;
 	public Animator animator;
+	public GameObject sceneManager;
 
 	private SentenceItem[] sentences;
 	public bool endOfDialogue;
@@ -72,5 +73,13 @@ public class DialogueManager : MonoBehaviour
 		i++;
 		DisplaySentence();
 	}
+
+	public void Yes ()
+    {
+		if (nameText.text.Equals("Vendedor"))
+        {
+			sceneManager.GetComponent<LoadScenes>().LoadStore();
+        }
+    }
 
 }
