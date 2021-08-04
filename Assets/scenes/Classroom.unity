@@ -3373,7 +3373,7 @@ GameObject:
   - component: {fileID: 737720696}
   - component: {fileID: 737720695}
   m_Layer: 0
-  m_Name: Scene Manager
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9172,15 +9172,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Size.x
-      value: 35
+      value: 40.677254
       objectReference: {fileID: 0}
     - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Size.y
-      value: 60
+      value: 61.892418
       objectReference: {fileID: 0}
     - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: 2.838626
+      objectReference: {fileID: 0}
+    - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.94620895
       objectReference: {fileID: 0}
     - target: {fileID: 916274783910505901, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_IsTrigger

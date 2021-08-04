@@ -22,6 +22,7 @@ public class MovementPlayer : MonoBehaviour
     void Update()
     {
         bool pause = FindObjectOfType<PauseManager>().pause;
+        bool endOfDialogue = FindObjectOfType<DialogueManager>().endOfDialogue;
 
         movementAxis.x = Input.GetAxisRaw("Horizontal");
         movementAxis.y = Input.GetAxisRaw("Vertical");
@@ -29,25 +30,30 @@ public class MovementPlayer : MonoBehaviour
         animator.SetFloat("Y", movementAxis.y);
         animator.SetFloat("Vel", movementAxis.magnitude);
 
-        if(movementAxis.magnitude > 0.02)
+        if((movementAxis.magnitude > 0.02) && (!pause) && endOfDialogue)
         {
             animator.SetFloat("LastX", movementAxis.x);
             animator.SetFloat("LastY", movementAxis.y);
         }
+
+        // Starts the dialogue when player collides with a NPC and press spacebar + stop player animation
         if (collisionNPC && Input.GetKeyDown(KeyCode.Space))
         {
-            movementSpeed = 0;
+            //movementSpeed = 0;
+            //animator.SetBool("Stop", true);
             NPC.GetComponent<Interactable>().StartDialogue();
         }
 
-        if (pause)
+        // Player cant walk when in pause state and when a dialogue is active.
+        if (pause || (!endOfDialogue))
         {
             movementSpeed = 0;
+            animator.SetBool("Stop", true);
         }
-
-        if ((FindObjectOfType<DialogueManager>().endOfDialogue) && !pause)
+        else
         {
             movementSpeed = 5f;
+            animator.SetBool("Stop", false);
         }
     }
 
