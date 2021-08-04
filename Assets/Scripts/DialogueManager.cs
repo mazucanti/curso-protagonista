@@ -21,6 +21,7 @@ public class DialogueManager : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		endOfDialogue = true;
 		yesButton.SetActive(false);
 		noButton.SetActive(false);
 		continueButton.SetActive(true);
@@ -29,17 +30,22 @@ public class DialogueManager : MonoBehaviour
 
 	public void StartConversation (Dialogue dialogue)
     {
-		endOfDialogue = false;
-		animator.SetBool("isOpen", true);
-		nameText.text = dialogue.name;
+        if (!animator.GetBool("isOpen") && !(FindObjectOfType<PauseManager>().animator.GetBool("isOpen")))
+        {
+			endOfDialogue = false;
+			animator.SetBool("isOpen", true);
+			nameText.text = dialogue.name;
 
-		i = 0;
+			i = 0;
 
-		sentences = new SentenceItem[dialogue.sentences.Length];
-		sentences = dialogue.sentences;
+			sentences = new SentenceItem[dialogue.sentences.Length];
+			sentences = dialogue.sentences;
 
-		DisplaySentence();
-    }
+			DisplaySentence();
+
+		}
+        
+	}
 
 	public void DisplaySentence()
     {
