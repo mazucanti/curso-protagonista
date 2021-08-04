@@ -12,19 +12,23 @@ public class MovementPlayer : MonoBehaviour
     public Animator animator;
     private bool collisionNPC;
     private Collider2D NPC;
+
+
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        bool pause = FindObjectOfType<PauseManager>().pause;
+
         movementAxis.x = Input.GetAxisRaw("Horizontal");
         movementAxis.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("X", movementAxis.x);
         animator.SetFloat("Y", movementAxis.y);
         animator.SetFloat("Vel", movementAxis.magnitude);
+
         if(movementAxis.magnitude > 0.02)
         {
             animator.SetFloat("LastX", movementAxis.x);
@@ -36,7 +40,12 @@ public class MovementPlayer : MonoBehaviour
             NPC.GetComponent<Interactable>().StartDialogue();
         }
 
-        if (FindObjectOfType<DialogueManager>().endOfDialogue)
+        if (pause)
+        {
+            movementSpeed = 0;
+        }
+
+        if ((FindObjectOfType<DialogueManager>().endOfDialogue) && !pause)
         {
             movementSpeed = 5f;
         }
@@ -57,7 +66,7 @@ public class MovementPlayer : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit2D (Collision2D collision)
     {
         collisionNPC = false;
     }

@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
     public Animator animator;
     public GameObject sceneManager;
 
-    float curTime, initTime;
+    float curTime;
     bool open = false;
 
 
