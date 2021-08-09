@@ -7,10 +7,11 @@ public class ShopManager : MonoBehaviour
 {
     public Text walletValue;
     public Text[] items;
+    public GameObject inventory;
+
     static int wallet = 300;
     static int[] itemQtd = { 3, 3, 3, 3, 3, 3, 3 };
     int[] itemPrices = { 15, 10, 20, 15, 10, 20, 15 };
-    //string[] itemNames = { "item1", "item2", "item3" };
     
 
 
@@ -30,8 +31,8 @@ public class ShopManager : MonoBehaviour
         if(wallet > 0 & itemQtd[itemId] > 0) 
         {
             wallet = wallet - itemPrices[itemId];
-            itemQtd[itemId]--; 
-            
+            itemQtd[itemId]--;
+            inventory.GetComponent<InventoryManager>().Increase(itemId+1);
         };
         
     }
