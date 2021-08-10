@@ -28,12 +28,19 @@ public class ShopManager : MonoBehaviour
 
     public void Buy(int itemId)
     {
-        if(wallet > 0 & itemQtd[itemId] > 0) 
+        if(itemQtd[itemId] > 0) 
         {
-            wallet = wallet - itemPrices[itemId];
-            itemQtd[itemId]--;
-            inventory.GetComponent<InventoryManager>().Increase(itemId+1);
-        };
+            if (wallet - itemPrices[itemId] > 0)
+            {
+                wallet = wallet - itemPrices[itemId];
+                itemQtd[itemId]--;
+                inventory.GetComponent<InventoryManager>().Increase(itemId + 1);
+            }
+            else
+            {
+                // implementar diálogo vendedor
+            }
+        }
         
     }
 }

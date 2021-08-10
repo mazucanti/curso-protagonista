@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
 
     private string[] names = { "Fatia de Pão", "Pão", "Faca de Pão", "Papel", "Caneta", "Marca-Texto", "Urso de Pelúcia", "Tesouro", "Certificado de Tempo Livre" };
     static int[] itemQtd = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    static int attack = 100; // not equipped
+    static int defense = 100; // not equipped
 
     // Start is called before the first frame update
     void Start()
@@ -63,38 +65,138 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i=0; i<9; i++)
         {
-            items[i].GetComponentsInChildren<Text>()[3].text = $"(x{itemQtd[i]})"; // shows the smount
+            items[i].GetComponentsInChildren<Text>()[3].text = $"(x{itemQtd[i]})"; // shows the amount
 
+            // If itemQtd = 0, set transparency to 70.
             if (itemQtd[i] == 0)
             {
                 string iconHex;
                 if(i==5)
-                    iconHex = "#FFD70070";
+                    iconHex = "#FFD70070"; // "marca-texto" has a different color
                 else
                     iconHex = "#4D4D4D70";
 
                 if (ColorUtility.TryParseHtmlString(iconHex, out Color iconColor))
                 {
-                    items[i].GetComponentsInChildren<SpriteRenderer>()[2].color = iconColor;
+                    items[i].GetComponentsInChildren<SpriteRenderer>()[2].color = iconColor; // icon
                 }
 
-                if (ColorUtility.TryParseHtmlString("#D1D1D170", out Color nameColor))
+                if (ColorUtility.TryParseHtmlString("#D1D1D170", out Color textColor))
                 {
-                    items[i].GetComponentsInChildren<Text>()[0].color = nameColor;
-                    items[i].GetComponentsInChildren<Text>()[3].color = nameColor;
+                    items[i].GetComponentsInChildren<Text>()[0].color = textColor; // name
+                    items[i].GetComponentsInChildren<Text>()[3].color = textColor; // qtd
+
+                    if(i < 7)
+                    {
+                        items[i].GetComponentsInChildren<Text>()[4].color = textColor; // attack text
+                        items[i].GetComponentsInChildren<Button>()[1].GetComponent<Image>().color = Color.white; // attack background
+
+                        if (i != 0)
+                        {
+                            items[i].GetComponentsInChildren<Text>()[5].color = textColor; // defense text
+                            items[i].GetComponentsInChildren<Button>()[2].GetComponent<Image>().color = Color.white; // defense background
+                        }
+                    }
                 }
             }
 
+            // If itemQtd != 0, set transparency to 255 and set color according to selected attack and defense.
             else
             {
                 if (i==5)
-                    items[i].GetComponentsInChildren<SpriteRenderer>()[2].color = new Color(255, 215, 0, 255);
+                    items[i].GetComponentsInChildren<SpriteRenderer>()[2].color = new Color(255, 215, 0, 255); // icon (marca-texto)
                 else
-                    items[i].GetComponentsInChildren<SpriteRenderer>()[2].color = Color.white;
+                    items[i].GetComponentsInChildren<SpriteRenderer>()[2].color = Color.white; // icon
 
-                items[i].GetComponentsInChildren<Text>()[0].color = Color.white;
-                items[i].GetComponentsInChildren<Text>()[3].color = Color.white;
+                items[i].GetComponentsInChildren<Text>()[0].color = Color.white; // name
+                items[i].GetComponentsInChildren<Text>()[3].color = Color.white; // qtd
+
+                if (i < 7)
+                {
+                    items[i].GetComponentsInChildren<Text>()[4].color = Color.white; // attack text
+                    items[i].GetComponentsInChildren<Button>()[1].GetComponent<Image>().color = Color.white; // attack background
+
+                    if (i != 0)
+                    {
+                        items[i].GetComponentsInChildren<Text>()[5].color = Color.white; // defense text
+                        items[i].GetComponentsInChildren<Button>()[2].GetComponent<Image>().color = Color.white; // defense background
+                    }
+                }
             }
+
+            // Eligible items for attack and defense.
+            if (i < 7)
+            {
+
+                // If item is set to "attack", set attack button color to green.
+                if (attack == i)
+                {
+                    if (ColorUtility.TryParseHtmlString("#90FF8F", out Color backColor))
+                    {
+                        items[i].GetComponentsInChildren<Button>()[1].GetComponent<Image>().color = backColor; // button background
+                    }
+
+                    if (ColorUtility.TryParseHtmlString("#60C058FF", out Color textColor))
+                    {
+                        items[i].GetComponentsInChildren<Text>()[4].color = textColor; // button text
+                    }
+                }
+
+                // If item is set to "defense", set defense button color to green.
+                if (defense == i)
+                {
+                    if (ColorUtility.TryParseHtmlString("#90FF8F", out Color backColor))
+                    {
+                        items[i].GetComponentsInChildren<Button>()[2].GetComponent<Image>().color = backColor; // button background
+                    }
+
+                    if (ColorUtility.TryParseHtmlString("#60C058FF", out Color textColor))
+                    {
+                        items[i].GetComponentsInChildren<Text>()[5].color = textColor; // button text
+                    }
+                }
+            }
+
         }
+    }
+
+    public void Attack (int itemId)
+    {
+        if (attack == itemId)
+        {
+            attack = 100; // unequip
+            itemQtd[itemId]++;
+        }
+
+        else if (itemQtd[itemId] != 0)
+        {
+            if (attack != 100)
+                itemQtd[attack]++;
+
+            attack = itemId; // equip
+            itemQtd[itemId]--;
+        }
+
+        ShowItems();
+    }
+
+    public void Defense (int itemId)
+    {
+        if (defense == itemId)
+        {
+            defense = 100; // unequip
+            itemQtd[itemId]++;
+        }
+
+        else if (itemQtd[itemId] != 0)
+        {
+            if (defense != 100)
+                itemQtd[defense]++;
+
+            defense = itemId; // equip
+            itemQtd[itemId]--;
+        }
+
+        ShowItems();
     }
 }
