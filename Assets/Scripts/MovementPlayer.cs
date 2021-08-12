@@ -39,8 +39,6 @@ public class MovementPlayer : MonoBehaviour
         // Starts the dialogue when player collides with a NPC and press spacebar + stop player animation
         if (collisionNPC && Input.GetKeyDown(KeyCode.Space))
         {
-            //movementSpeed = 0;
-            //animator.SetBool("Stop", true);
             NPC.GetComponent<Interactable>().StartDialogue();
         }
 

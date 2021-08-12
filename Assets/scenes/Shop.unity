@@ -275,11 +275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6700549513653510768, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -13.689
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 6700549513653510768, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -65.53
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 6700549513653510768, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -287,13 +287,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6700549513653510768, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29.7
+      value: 32.5
       objectReference: {fileID: 0}
     - target: {fileID: 6700549513653510770, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_Text
       value: 'Certificado
 
         de Tempo Livre'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700549513653510770, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6700549514820271722, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -325,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6700549514841636056, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 6700549514841636059, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_Sprite
@@ -752,6 +756,10 @@ PrefabInstance:
       value: 'Marca-
 
         Texto'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700549513653510770, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6700549514820271722, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1698,6 +1706,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7396249685333175619, guid: 4795ecbe095b23d4dbe1f2dddfcf1aa5, type: 3}
   m_PrefabInstance: {fileID: 1838918522}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1339879024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1339879026}
+  - component: {fileID: 1339879025}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1339879025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339879024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bb906ba524c7e4b838365c09bb2dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1533661701}
+  infoBox: {fileID: 1533661701}
+  items:
+  - {fileID: 1533661701}
+  - {fileID: 1533661701}
+  - {fileID: 1533661701}
+  - {fileID: 1533661701}
+  - {fileID: 1533661701}
+  - {fileID: 1533661701}
+  - {fileID: 1533661701}
+  - {fileID: 1533661701}
+  - {fileID: 1533661701}
+--- !u!4 &1339879026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339879024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6283592, y: -0.31532058, z: 4827.2056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1343667114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1801,6 +1864,7 @@ MonoBehaviour:
   - {fileID: 990256672}
   - {fileID: 1107420152}
   - {fileID: 337815066}
+  inventory: {fileID: 1339879024}
 --- !u!4 &1351200774
 Transform:
   m_ObjectHideFlags: 0
@@ -1990,6 +2054,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35526a7d35a521b4aba63fc0a4992640, type: 3}
+--- !u!1 &1533661701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1533661702}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1533661702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533661701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8643627, y: -0.2684955, z: -1.796861}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1593784551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2170,6 +2264,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Faca\nde P\xE3o"
       objectReference: {fileID: 0}
+    - target: {fileID: 6700549513653510770, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6700549514820271722, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2299,7 +2397,7 @@ GameObject:
   - component: {fileID: 1748733835}
   - component: {fileID: 1748733836}
   m_Layer: 5
-  m_Name: Menu Background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2663,6 +2761,10 @@ PrefabInstance:
     - target: {fileID: 6700549513653510770, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_Text
       value: "Urso de\nPel\xFAcia"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700549513653510770, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6700549514820271722, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
