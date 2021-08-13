@@ -10,4 +10,10 @@ public class Interactable : MonoBehaviour
     {
         FindObjectOfType<DialogueManager>().StartConversation(dialogue);
     }
+
+    public void StartDialogueShop ()
+    {
+        FindObjectOfType<DialogueManagerShop>().StartConversation(dialogue);
+    }
+
 }
