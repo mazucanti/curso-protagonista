@@ -8,42 +8,70 @@ public class ShopManager : MonoBehaviour
     public Text walletValue;
     public Text[] items;
     public GameObject inventory;
+    public GameObject noMoneyDialogue;
+    public GameObject inflationDialogue;
+    public GameObject increaseCanvas;
+    public GameObject increaseItemPrefab;
+    private GameObject increaseItem;
 
     static int wallet = 200;
-    //static int[] itemQtd = { 3, 3, 3, 3, 3, 3, 3 };
-    static int[] itemPrices = { 80, 380, 280, 80, 480, 680, 100000 };
+    static int[] itemPrices = { 100, 400, 300, 100, 500, 700, 100000 };
+    static bool inflation = false;
+    static int inflationCount = 1;
 
     private void Start()
     {
-        // Increases item prices every time player enters the shop.
-        for (int i=0; i<6; i++)
+        // Increases item prices every 3 times player enters the shop. 
+        if (inflationCount % 3 == 0)
         {
-            itemPrices[i] += 20;
+            inflation = true;
         }
-    }
+        if (inflation)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                itemPrices[i] += 20;
+            }
+            inflationDialogue.GetComponent<Interactable>().StartDialogueShop();
 
-    // Update is called once per frame
-    void Update()
-    {
-        walletValue.text = $"{wallet}";
-        for(int i = 0; i < 7; i++)
+            inflation = false;
+        }
+        inflationCount++;
+
+        // Shows prices.
+        for (int i = 0; i < 7; i++)
         {
             items[i].text = $"${itemPrices[i]}";
         };
-         
+
+    }
+
+    void Update()
+    {
+        // Show wallet amount.
+        walletValue.text = $"{wallet}";         
     }
 
     public void Buy(int itemId)
     {
+        // If player has sufficient amount in wallet, decreases amount from wallet and increases item amount.
         if (wallet - itemPrices[itemId] >= 0)
         {
             wallet = wallet - itemPrices[itemId];
-            //itemQtd[itemId]--;
             inventory.GetComponent<InventoryManager>().Increase(itemId + 1);
+
+            // Increasing animation.
+            increaseItem = Instantiate(increaseItemPrefab, increaseCanvas.transform);
+            increaseItem.transform.position = items[itemId].transform.position;
+            increaseItem.transform.Translate(0, 0.5f, 0);
+
+            FindObjectOfType<DialogueManagerShop>().animator.SetBool("isOpen", false);
         }
+
+        // If player doesn't have enough money, shows vendor dialogue.
         else
         {
-            // implementar diálogo vendedor
+            noMoneyDialogue.GetComponent<Interactable>().StartDialogueShop();
         }
     }
 }
