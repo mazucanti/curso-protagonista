@@ -3794,8 +3794,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.tag
+      value: Colega
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.name
       value: Colega 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
@@ -6076,9 +6084,10 @@ GameObject:
   - component: {fileID: 725904751}
   - component: {fileID: 725904753}
   - component: {fileID: 725904754}
+  - component: {fileID: 725904755}
   m_Layer: 5
   m_Name: Inofensive Bread
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6187,6 +6196,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &725904755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725904749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e10e47d15657b44fae47e3ec296bdec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Evil Bread
+    tag: Monster
+    sentences:
+    - text: 'Nem pense em me comer, garoto! '
+      yesNo: 0
+    - text: "Eu n\xE3o sou o que voc\xEA est\xE1 pensando..."
+      yesNo: 0
+    - text: Gostaria de iniciar uma batalha?
+      yesNo: 1
 --- !u!1 &737720694
 GameObject:
   m_ObjectHideFlags: 0
@@ -9096,9 +9127,10 @@ GameObject:
   - component: {fileID: 1106672463}
   - component: {fileID: 1106672466}
   - component: {fileID: 1106672467}
+  - component: {fileID: 1106672468}
   m_Layer: 5
   m_Name: Baby Dragon
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9227,6 +9259,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1106672468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106672461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e10e47d15657b44fae47e3ec296bdec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Baby Dragon
+    tag: Monster
+    sentences:
+    - text: Voce quer entlar pla minha equipe?"
+      yesNo: 1
+    - text: Entao quer blincar comigo?
+      yesNo: 1
 --- !u!1 &1108494045
 GameObject:
   m_ObjectHideFlags: 0
@@ -9587,9 +9639,10 @@ GameObject:
   - component: {fileID: 1174453785}
   - component: {fileID: 1174453788}
   - component: {fileID: 1174453789}
+  - component: {fileID: 1174453790}
   m_Layer: 5
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9723,6 +9776,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1174453790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174453783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e10e47d15657b44fae47e3ec296bdec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Skeleton
+    tag: Monster
+    sentences:
+    - text: Gostaria de iniciar uma batalha?
+      yesNo: 1
 --- !u!1 &1205642049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7428861770298228674, guid: adc65b48919a81c4882f749375e58059, type: 3}
@@ -10734,6 +10805,10 @@ PrefabInstance:
     - target: {fileID: 7540219171466260252, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.tag
+      value: Instrutor
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.name
@@ -12759,7 +12834,7 @@ GameObject:
   - component: {fileID: 1507887926}
   m_Layer: 5
   m_Name: Evil Bread
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12984,6 +13059,10 @@ PrefabInstance:
     - target: {fileID: 7540219171466260252, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.tag
+      value: Colega
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.name
@@ -16046,6 +16125,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.tag
+      value: Colega
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.name
       value: Colega 1
       objectReference: {fileID: 0}
@@ -16071,6 +16154,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+--- !u!1 &1921230982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7540219171466260255, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+  m_PrefabInstance: {fileID: 1921230981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1921230983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921230982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e10e47d15657b44fae47e3ec296bdec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Colega 1
+    tag: 
+    sentences:
+    - text: Gostaria de formar uma equipe?
+      yesNo: 1
 --- !u!1 &1938124768
 GameObject:
   m_ObjectHideFlags: 0
@@ -18053,6 +18159,10 @@ PrefabInstance:
     - target: {fileID: 7540219171466260252, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
+      propertyPath: dialogue.tag
+      value: Vendedor
       objectReference: {fileID: 0}
     - target: {fileID: 7540219171466260253, guid: dad4fa7ce19cd114f8be974697c80521, type: 3}
       propertyPath: dialogue.name

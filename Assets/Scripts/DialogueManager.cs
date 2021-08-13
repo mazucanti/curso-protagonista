@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
 
 	private SentenceItem[] sentences;
 	public bool endOfDialogue;
+	private string tagNPC;
 
 	private int i;
 
@@ -35,6 +36,7 @@ public class DialogueManager : MonoBehaviour
 			endOfDialogue = false;
 			animator.SetBool("isOpen", true);
 			nameText.text = dialogue.name;
+			tagNPC = dialogue.tag;
 
 			i = 0;
 
@@ -82,10 +84,35 @@ public class DialogueManager : MonoBehaviour
 
 	public void Yes ()
     {
-		if (nameText.text.Equals("Vendedor"))
+		if (tagNPC.Equals("Vendedor"))
         {
 			sceneManager.GetComponent<LoadScenes>().LoadStore();
         }
+				else if (tagNPC.Equals("Colega"))
+        {
+			// formar equipe.
+        }
+		else if (tagNPC.Equals("Monster"))
+        {
+			// Baby Dragon 
+			if (nameText.text.Equals("Baby Dragon"))
+			{
+				if (sentenceText.text.Equals("Voce quer entlar pla minha equipe?"))
+				{
+					// formar equipe com baby dragon.
+				}
+				else
+				{
+					// batalha com baby dragon
+				}
+			}
+
+			// Other monsters
+            else
+            {
+				// começar batalha com monstro.
+			}
+		}
     }
 
 }

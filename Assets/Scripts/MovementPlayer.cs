@@ -63,7 +63,7 @@ public class MovementPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("NPC"))
+        if (collision.collider.CompareTag("NPC") || collision.collider.CompareTag("Monster"))
         {
             collisionNPC = true;
             NPC = collision.collider;
