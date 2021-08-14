@@ -10,6 +10,7 @@ public class CombatUnit : MonoBehaviour
     public int acc;
     public int res;
     public int agi;
+    public enum StatusEffect {Azia, Enfurecido, Confusão, Medo, Distraído};
     public int lvl;
     public int exp;
     public int nxt;
