@@ -29,9 +29,6 @@ public class DialogueManager : MonoBehaviour
 		i = 0;
 	}
 
-	public Animator GetAnimator(){
-		return animator;
-	}
 
 	public void StartConversation (Dialogue dialogue)
     {
