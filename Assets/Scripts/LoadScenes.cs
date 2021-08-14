@@ -14,4 +14,8 @@ public class LoadScenes : MonoBehaviour
     {
         SceneManager.LoadScene("Shop");
     }
+
+    public void LoadCombat(){
+        SceneManager.LoadScene("Combat");
+    }
 }
