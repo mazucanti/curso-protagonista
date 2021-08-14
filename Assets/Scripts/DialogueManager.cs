@@ -29,6 +29,10 @@ public class DialogueManager : MonoBehaviour
 		i = 0;
 	}
 
+	public Animator GetAnimator(){
+		return animator;
+	}
+
 	public void StartConversation (Dialogue dialogue)
     {
         if (!animator.GetBool("isOpen") && !(FindObjectOfType<PauseManager>().animator.GetBool("isOpen")))
@@ -110,7 +114,7 @@ public class DialogueManager : MonoBehaviour
 			// Other monsters
             else
             {
-				// começar batalha com monstro.
+				// comeï¿½ar batalha com monstro.
 			}
 		}
     }
