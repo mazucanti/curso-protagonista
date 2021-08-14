@@ -14,6 +14,5 @@ public class CombatUnit : MonoBehaviour
     public int lvl;
     public int exp;
     public int nxt;
-    public int hea;
 
 }
