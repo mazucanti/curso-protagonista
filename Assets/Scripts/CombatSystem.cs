@@ -9,14 +9,16 @@ public class CombatSystem : MonoBehaviour
     public int enemyId;
     public GameObject payerPref;
     public GameObject enemyPref;
-    public Transform enemyPos;
 
-    Unit playerUnit;
-    Unit enemyUnit;
+    public Text diagName;
+    public Text diagText;
+
+    CombatUnit playerUnit;
+    CombatUnit enemyUnit;
     // Start is called before the first frame update
     void Start()
     {
-        CombatState = CombatState.START;
+        var state = CombatState.START;
         SetupCombat(0);
         
     }
@@ -25,7 +27,12 @@ public class CombatSystem : MonoBehaviour
     void SetupCombat(int enemyId)
     {
         GameObject playerGO = Instantiate(payerPref);
-        GameObject enemyGO = Instantiate(enemyPref, enemyPos);
+        GameObject enemyGO = Instantiate(enemyPref);
+
+        playerUnit = playerGO.GetComponent<CombatUnit>();
+        enemyUnit = enemyGO.GetComponent<CombatUnit>();
+        diagName.text = enemyUnit.name;
+        diagText.text = "Eu te desafio!";
 
     }
 }
