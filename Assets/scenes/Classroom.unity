@@ -198,7 +198,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Texto 1
+  m_Text: "Uma alimento muito nutritivo e energ\xE9tico!"
 --- !u!222 &51999959
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1005,7 +1005,6 @@ RectTransform:
   m_Children:
   - {fileID: 945770246}
   - {fileID: 1231960778}
-  - {fileID: 1866157853}
   - {fileID: 565460312}
   m_Father: {fileID: 1098371607}
   m_RootOrder: 2
@@ -4312,6 +4311,14 @@ PrefabInstance:
       propertyPath: m_Text
       value: SAIR
       objectReference: {fileID: 0}
+    - target: {fileID: 535340104197035391, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 535340104197035391, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 535340105619218850, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4354,7 +4361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4378,7 +4385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -382.87
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4414,7 +4421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -76.500015
+      value: -70
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5105,7 +5112,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Texto 6
+  m_Text: Tem presente mais carinhoso que esse?
 --- !u!222 &635268605
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7636,7 +7643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -382.87
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7672,7 +7679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 79.3
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8662,7 +8669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Texto 4
+  m_Text: "Sua tinta pode servir para mais do que apenas anota\xE7\xF5es."
 --- !u!222 &1106264302
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9743,7 +9750,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 535340104197035388, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_Text
-      value: "Invent\xE1rio"
+      value: "INVENT\xC1RIO"
+      objectReference: {fileID: 0}
+    - target: {fileID: 535340104197035388, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 535340104197035391, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -9819,7 +9830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -382.87
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9855,7 +9866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 26.699997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12466,7 +12477,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Texto 3
+  m_Text: "Bom pra fazer anota\xE7\xF5es, mas cuidado com os cortes de papel!"
 --- !u!222 &1539839790
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13113,7 +13124,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Texto 7
+  m_Text: "Parab\xE9ns! Voc\xEA teve tempo suficiente para arrecadar o valor deste
+    certificado."
 --- !u!222 &1722974631
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13417,7 +13429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6700549514841636059, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_SortingOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6700549515271973524, guid: 443dd158432a9274bb141f13da34acfc, type: 3}
       propertyPath: m_SortingOrder
@@ -13503,7 +13515,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Texto 0
+  m_Text: "Uma fatia de p\xE3o cai melhor que um p\xE3o inteiro."
 --- !u!222 &1728069082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14256,7 +14268,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Texto 5
+  m_Text: "Amarelo \xE9 legal.\r"
 --- !u!222 &1838558709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14354,112 +14366,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860745016}
   m_CullTransparentMesh: 1
---- !u!1001 &1866157852
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 168748276}
-    m_Modifications:
-    - target: {fileID: 535340104197035388, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_Text
-      value: BOTAO 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218876, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_Name
-      value: Menu Button (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -643.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -382.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -19.999897
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.899994
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
---- !u!224 &1866157853 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 535340105619218877, guid: eab25979027fc344b8ac79faf9a1556e, type: 3}
-  m_PrefabInstance: {fileID: 1866157852}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1876111918
 GameObject:
   m_ObjectHideFlags: 0
@@ -15508,7 +15414,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Texto 2
+  m_Text: "N\xE3o \xE9 o melhor objeto de corte do mundo... Mas corta."
 --- !u!222 &1970220420
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15576,7 +15482,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 53bd2da7b9ef39c4d9448fad5700e900, type: 3}
-    m_FontSize: 8
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

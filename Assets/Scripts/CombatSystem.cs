@@ -226,7 +226,6 @@ public class CombatSystem : MonoBehaviour
                 dmg = atk;
                 break;
         }
-        dmg = dmg * source.lvl;
         return dmg;
     }
 }
