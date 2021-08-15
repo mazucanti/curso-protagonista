@@ -157,24 +157,12 @@ public class CombatSystem : MonoBehaviour
     }
 
     public void OnRun(){
-        if (state == CombatState.PLAYER_TURN){
-            SetState(CombatState.ESCAPED);
-            
-            var escape = r.Next(playerUnit.agi) - r.Next(enemyUnit.agi);
-            if (escape > 0){
-                SetupDialog();
-                diagText.text = "Você escapou!";
-            }
-            else{
-                diagText.text = "Você falhou em escapar!";
-                SetState(CombatState.ENEMY_TURN);
-            }
-        }
+        sceneManager.GetComponent<LoadScenes>().LoadRoom();       
     }
 
     void PlayerAttack(){
         
-        var hit_miss = r.Next(playerUnit.acc) -  r.Next(enemyUnit.agi) + 3;
+        var hit_miss = (playerUnit.acc) -  (enemyUnit.agi) + 3;
         if (hit_miss >= 0){
             var itemId = Inventory.GetComponent<InventoryManager>().GetAttack();
             var dmg = setDamage(itemId, playerUnit, enemyUnit);
