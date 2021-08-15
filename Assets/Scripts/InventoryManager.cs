@@ -9,8 +9,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject infoBox;
     public GameObject[] items;
 
-    private string[] names = { "Fatia de Pão", "Pão", "Faca de Pão", "Papel", "Caneta", "Marca-Texto", "Urso de Pelúcia", "Tesouro", "Certificado de Tempo Livre" };
-    static int[] itemQtd = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    private string[] names = { "Pão", "Faca de Pão", "Papel", "Caneta", "Marca-Texto", "Urso de Pelúcia", "Certificado de Tempo Livre" };
+    static int[] itemQtd = { 0, 0, 0, 0, 0, 0, 0 };
     static int attack = 100; // not equipped
     static int defense = 100; // not equipped
 
@@ -63,7 +63,7 @@ public class InventoryManager : MonoBehaviour
 
     private void ShowItems ()
     {
-        for (int i=0; i<9; i++)
+        for (int i=0; i<7; i++)
         {
             items[i].GetComponentsInChildren<Text>()[3].text = $"(x{itemQtd[i]})"; // shows the amount
 
@@ -71,7 +71,7 @@ public class InventoryManager : MonoBehaviour
             if (itemQtd[i] == 0)
             {
                 string iconHex;
-                if(i==5)
+                if(i==4)
                     iconHex = "#FFD70070"; // "marca-texto" has a different color
                 else
                     iconHex = "#4D4D4D70";
@@ -86,16 +86,13 @@ public class InventoryManager : MonoBehaviour
                     items[i].GetComponentsInChildren<Text>()[0].color = textColor; // name
                     items[i].GetComponentsInChildren<Text>()[3].color = textColor; // qtd
 
-                    if(i < 7)
+                    if(i < 6)
                     {
                         items[i].GetComponentsInChildren<Text>()[4].color = textColor; // attack text
                         items[i].GetComponentsInChildren<Button>()[1].GetComponent<Image>().color = Color.white; // attack background
+                        items[i].GetComponentsInChildren<Text>()[5].color = textColor; // defense text
+                        items[i].GetComponentsInChildren<Button>()[2].GetComponent<Image>().color = Color.white; // defense background
 
-                        if (i != 0)
-                        {
-                            items[i].GetComponentsInChildren<Text>()[5].color = textColor; // defense text
-                            items[i].GetComponentsInChildren<Button>()[2].GetComponent<Image>().color = Color.white; // defense background
-                        }
                     }
                 }
             }
@@ -103,7 +100,7 @@ public class InventoryManager : MonoBehaviour
             // If itemQtd != 0, set transparency to 255 and set color according to selected attack and defense.
             else
             {
-                if (i==5)
+                if (i==4)
                     items[i].GetComponentsInChildren<SpriteRenderer>()[2].color = new Color(255, 215, 0, 255); // icon (marca-texto)
                 else
                     items[i].GetComponentsInChildren<SpriteRenderer>()[2].color = Color.white; // icon
@@ -111,21 +108,17 @@ public class InventoryManager : MonoBehaviour
                 items[i].GetComponentsInChildren<Text>()[0].color = Color.white; // name
                 items[i].GetComponentsInChildren<Text>()[3].color = Color.white; // qtd
 
-                if (i < 7)
+                if (i < 6)
                 {
                     items[i].GetComponentsInChildren<Text>()[4].color = Color.white; // attack text
                     items[i].GetComponentsInChildren<Button>()[1].GetComponent<Image>().color = Color.white; // attack background
-
-                    if (i != 0)
-                    {
-                        items[i].GetComponentsInChildren<Text>()[5].color = Color.white; // defense text
-                        items[i].GetComponentsInChildren<Button>()[2].GetComponent<Image>().color = Color.white; // defense background
-                    }
+                    items[i].GetComponentsInChildren<Text>()[5].color = Color.white; // defense text
+                    items[i].GetComponentsInChildren<Button>()[2].GetComponent<Image>().color = Color.white; // defense background
                 }
             }
 
             // Eligible items for attack and defense.
-            if (i < 7)
+            if (i < 6)
             {
 
                 // If item is set to "attack", set attack button color to green.

@@ -58,7 +58,7 @@ public class ShopManager : MonoBehaviour
         if (wallet - itemPrices[itemId] >= 0)
         {
             wallet = wallet - itemPrices[itemId];
-            inventory.GetComponent<InventoryManager>().Increase(itemId + 1);
+            inventory.GetComponent<InventoryManager>().Increase(itemId);
 
             // Increasing animation.
             increaseItem = Instantiate(increaseItemPrefab, increaseCanvas.transform);
