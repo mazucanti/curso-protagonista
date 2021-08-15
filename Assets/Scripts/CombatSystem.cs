@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using static System.Random;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,7 +38,7 @@ public class CombatSystem : MonoBehaviour
 
     public CombatState state;
 
-    Random r;
+    System.Random r = new System.Random();
     CombatUnit playerUnit;
     CombatUnit enemyUnit;
     // Start is called before the first frame update
@@ -154,7 +155,7 @@ public class CombatSystem : MonoBehaviour
         if (state == CombatState.PLAYER_TURN){
             SetState(CombatState.ESCAPED);
             
-            var escape = r.Next(0, playerUnit.agi) - r.Next(0, enemyUnit.agi);
+            var escape = r.Next(playerUnit.agi) - r.Next(enemyUnit.agi);
             if (escape > 0){
                 SetupDialog();
                 diagText.text = "Você escapou!";
@@ -169,7 +170,7 @@ public class CombatSystem : MonoBehaviour
     void PlayerAttack(){
         dialog.GetComponent<Animator>().SetBool("isOpen", true);
         
-        var hit_miss = r.Next(0, playerUnit.acc) - r.Next(0, enemyUnit.agi);
+        var hit_miss = r.Next(playerUnit.acc) -  r.Next(enemyUnit.agi);
         if (hit_miss >= 0){
             var itemId = Inventory.GetComponent<InventoryManager>().GetAttack();
             var dmg = setDamage(itemId, playerUnit, enemyUnit);

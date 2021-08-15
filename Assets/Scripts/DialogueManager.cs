@@ -104,14 +104,14 @@ public class DialogueManager : MonoBehaviour
 				}
 				else
 				{
-					// batalha com baby dragon
+					sceneManager.GetComponent<LoadScenes>().LoadCombat();
 				}
 			}
 
 			// Other monsters
             else
             {
-				// come�ar batalha com monstro.
+				sceneManager.GetComponent<LoadScenes>().LoadCombat();
 			}
 		}
     }
