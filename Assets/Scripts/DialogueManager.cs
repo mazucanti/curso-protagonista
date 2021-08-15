@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
 		i = 0;
 	}
 
+
 	public void StartConversation (Dialogue dialogue)
     {
         if (!animator.GetBool("isOpen") && !(FindObjectOfType<PauseManager>().animator.GetBool("isOpen")))
@@ -103,14 +104,14 @@ public class DialogueManager : MonoBehaviour
 				}
 				else
 				{
-					// batalha com baby dragon
+					sceneManager.GetComponent<LoadScenes>().LoadCombat();
 				}
 			}
 
 			// Other monsters
             else
             {
-				// começar batalha com monstro.
+				sceneManager.GetComponent<LoadScenes>().LoadCombat();
 			}
 		}
     }

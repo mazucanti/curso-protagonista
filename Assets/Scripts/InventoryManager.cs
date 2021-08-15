@@ -9,10 +9,10 @@ public class InventoryManager : MonoBehaviour
     public GameObject infoBox;
     public GameObject[] items;
 
-    private string[] names = { "Fatia de Pão", "Pão", "Faca de Pão", "Papel", "Caneta", "Marca-Texto", "Urso de Pelúcia", "Tesouro", "Certificado de Tempo Livre" };
+    private string[] names = { "Fatia de Pï¿½o", "Pï¿½o", "Faca de Pï¿½o", "Papel", "Caneta", "Marca-Texto", "Urso de Pelï¿½cia", "Tesouro", "Certificado de Tempo Livre" };
     static int[] itemQtd = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    static int attack = 100; // not equipped
-    static int defense = 100; // not equipped
+    public static int attack = 100; // not equipped
+    public static int defense = 100; // not equipped
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,14 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public int GetAttack(){
+        return attack;
+    }
+
+    public int GetDefense(){
+        return defense;
     }
 
     public void Enter ()

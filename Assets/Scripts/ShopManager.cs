@@ -52,6 +52,10 @@ public class ShopManager : MonoBehaviour
         walletValue.text = $"{wallet}";         
     }
 
+    public void combatReward(int value){
+        wallet = wallet + value;
+    }
+
     public void Buy(int itemId)
     {
         // If player has sufficient amount in wallet, decreases amount from wallet and increases item amount.
