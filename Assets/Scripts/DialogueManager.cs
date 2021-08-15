@@ -11,34 +11,44 @@ public class DialogueManager : MonoBehaviour
 	public GameObject yesButton;
 	public GameObject noButton;
 	public Animator animator;
+	public GameObject sceneManager;
 
 	private SentenceItem[] sentences;
 	public bool endOfDialogue;
+	private string tagNPC;
 
 	private int i;
 
 	// Use this for initialization
 	void Start()
 	{
+		endOfDialogue = true;
 		yesButton.SetActive(false);
 		noButton.SetActive(false);
 		continueButton.SetActive(true);
 		i = 0;
 	}
 
+
 	public void StartConversation (Dialogue dialogue)
     {
-		endOfDialogue = false;
-		animator.SetBool("isOpen", true);
-		nameText.text = dialogue.name;
+        if (!animator.GetBool("isOpen") && !(FindObjectOfType<PauseManager>().animator.GetBool("isOpen")))
+        {
+			endOfDialogue = false;
+			animator.SetBool("isOpen", true);
+			nameText.text = dialogue.name;
+			tagNPC = dialogue.tag;
 
-		i = 0;
+			i = 0;
 
-		sentences = new SentenceItem[dialogue.sentences.Length];
-		sentences = dialogue.sentences;
+			sentences = new SentenceItem[dialogue.sentences.Length];
+			sentences = dialogue.sentences;
 
-		DisplaySentence();
-    }
+			DisplaySentence();
+
+		}
+        
+	}
 
 	public void DisplaySentence()
     {
@@ -72,5 +82,38 @@ public class DialogueManager : MonoBehaviour
 		i++;
 		DisplaySentence();
 	}
+
+	public void Yes ()
+    {
+		if (tagNPC.Equals("Vendedor"))
+        {
+			sceneManager.GetComponent<LoadScenes>().LoadStore();
+        }
+				else if (tagNPC.Equals("Colega"))
+        {
+			// formar equipe.
+        }
+		else if (tagNPC.Equals("Monster"))
+        {
+			// Baby Dragon 
+			if (nameText.text.Equals("Baby Dragon"))
+			{
+				if (sentenceText.text.Equals("Voce quer entlar pla minha equipe?"))
+				{
+					// formar equipe com baby dragon.
+				}
+				else
+				{
+					sceneManager.GetComponent<LoadScenes>().LoadCombat();
+				}
+			}
+
+			// Other monsters
+            else
+            {
+				sceneManager.GetComponent<LoadScenes>().LoadCombat();
+			}
+		}
+    }
 
 }
