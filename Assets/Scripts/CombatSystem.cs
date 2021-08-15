@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class CombatSystem : MonoBehaviour
 {
-    public enum CombatState { START, PLAYER_SEL, ENEMY_SEL, ACT, WON, LOST};
-    public int enemyId;
+    public enum CombatState { START, PLAYER_TURN, ENEMY_TURN, WON, LOST, ESCAPED};
+
+    public GameObject shop;
 
     public GameObject sceneManager;
 
     public static int playerHP;
-    public static int enemyHP;
+    public int enemyHP;
 
     public int PartyLenght;
     
@@ -27,7 +28,7 @@ public class CombatSystem : MonoBehaviour
     public GameObject noButton;
 
     public Text comName;
-    public GameObject CombatHud;
+    public GameObject combatHud;
     public GameObject atkButton;
     public GameObject defButton;
     public GameObject runButton;
@@ -36,6 +37,7 @@ public class CombatSystem : MonoBehaviour
 
     public CombatState state;
 
+    Random r;
     CombatUnit playerUnit;
     CombatUnit enemyUnit;
     // Start is called before the first frame update
@@ -44,6 +46,11 @@ public class CombatSystem : MonoBehaviour
         state = CombatState.START;
         SetupCombat(0);
         
+    }
+
+    void Update(){
+        comName.text = $"Seu HP: {playerHP}";
+        diagName.text = $"Oponente: LV{enemyUnit.lvl} HP: {enemyHP}";
     }
 
     // Update is called once per frame
@@ -59,13 +66,10 @@ public class CombatSystem : MonoBehaviour
         enemyHP = enemyUnit.res * 3;
         playerHP = playerUnit.res * 5;
         
-        comName.text = $"Seu HP: {playerHP}";
-        diagName.text = $"{enemyUnit.name} LV{enemyUnit.lvl} HP: {enemyHP}";
-        diagText.text = "Eu te desafio!";
+        diagText.text = "Eu te desafio!\nMe transformarei em uma vil criatura!";
         continueButton.SetActive(true);
         yesButton.SetActive(false);
         noButton.SetActive(false);
-
 
     }
 
@@ -73,17 +77,142 @@ public class CombatSystem : MonoBehaviour
         state = currentState;
     }
 
-    public void PlayerAttack(){
-        var itemMod = Inventory.GetComponent<InventoryManager>().GetAttack();
-        var dmg = setDamage(itemMod);
-        
+    public void OnContinue(){
+        switch (state)
+        {
+            case CombatState.START:
+                SetState(CombatState.PLAYER_TURN);
+                SetupHUD();
+                break;
+            case CombatState.ENEMY_TURN:
+                if (playerHP <= 0){
+                    SetState(CombatState.LOST);
+                    diagText.text = "Você perdeu!";
+                }
+                else{
+                    SetState(CombatState.PLAYER_TURN);
+                    SetupHUD();
+                }
+                break;
+            case CombatState.WON:
+                SetupDialog();
+                shop.GetComponent<ShopManager>().combatReward(100);
+                diagText.text = $"Você ganhou a batalha, recebeu $100";
+                sceneManager.GetComponent<LoadScenes>().LoadRoom();
+                break;
+            case CombatState.LOST:
+                sceneManager.GetComponent<LoadScenes>().LoadRoom();
+                break;
+            case CombatState.ESCAPED:
+                sceneManager.GetComponent<LoadScenes>().LoadRoom();
+                break;
+        }
     }
 
-    int setDamage(int itemMod){
-        var atk = playerUnit.atk;
-        var def = enemyUnit.def;
+    void SetupHUD(){
+        dialog.GetComponent<Animator>().SetBool("isOpen", false);
+        continueButton.SetActive(false);
+        combatHud.GetComponent<Animator>().SetBool("isOpen", true);
+        atkButton.SetActive(true);
+        defButton.SetActive(true);
+        runButton.SetActive(true);
+    }
+
+    void SetupDialog(){
+        combatHud.GetComponent<Animator>().SetBool("isOpen", false);
+        atkButton.SetActive(false);
+        defButton.SetActive(false);
+        runButton.SetActive(false);
+        dialog.GetComponent<Animator>().SetBool("isOpen", true);
+        continueButton.SetActive(true);
+    }
+
+    void EnemyAttack(){
+        var dmg = setDamage(100, enemyUnit, playerUnit);
+        playerHP = playerHP - dmg;
+    }
+
+    public void OnAttack(){
+        if (state == CombatState.PLAYER_TURN){
+            SetupDialog();
+            PlayerAttack();
+            SetState(CombatState.ENEMY_TURN);
+        }
+    }
+
+    public void OnDefense(){
+        if (state == CombatState.PLAYER_TURN){
+            var itemId = Inventory.GetComponent<InventoryManager>().GetDefense();
+            SetState(CombatState.ENEMY_TURN);
+            SetupDialog();
+            var dmg = setDamage(100, enemyUnit, playerUnit);
+            PlayerDefense(itemId, dmg);
+        }
+    }
+
+    public void OnRun(){
+        if (state == CombatState.PLAYER_TURN){
+            SetState(CombatState.ESCAPED);
+            
+            var escape = r.Next(0, playerUnit.agi) - r.Next(0, enemyUnit.agi);
+            if (escape > 0){
+                SetupDialog();
+                diagText.text = "Você escapou!";
+            }
+            else{
+                diagText.text = "Você falhou em escapar!";
+                SetState(CombatState.ENEMY_TURN);
+            }
+        }
+    }
+
+    void PlayerAttack(){
+        dialog.GetComponent<Animator>().SetBool("isOpen", true);
+        
+        var hit_miss = r.Next(0, playerUnit.acc) - r.Next(0, enemyUnit.agi);
+        if (hit_miss >= 0){
+            var itemId = Inventory.GetComponent<InventoryManager>().GetAttack();
+            var dmg = setDamage(itemId, playerUnit, enemyUnit);
+            enemyHP = enemyHP - dmg;
+            diagText.text = $"Você ataca o oponente e dá {dmg} de dano!";
+        }
+        else if (hit_miss == enemyUnit.def){
+            diagText.text = "O inimigo defendeu seu ataque!";
+        }
+        else{
+            diagText.text = "Você errou!";
+        }    
+    }
+
+    void PlayerDefense(int itemId, int dmg){
+        dmg = dmg - playerUnit.def;
+        if (dmg <= 0){
+            dmg = 1;
+        }
+        if(itemId == 0){
+            diagText.text = "Você come a fatia de pão, ganhando 5 HP!";
+            playerHP = playerHP + 5;
+        }
+        else if (itemId == 1){
+            diagText.text = "Você tentou engolir o pão inteiro e agora está com azia";
+            playerHP = playerHP - 1;
+        }
+
+        else{
+            diagText.text = $"Você recebeu {dmg} de dano!";
+        }
+    }
+    
+
+    //public void PlayerDefense(itemId){
+
+   // }
+
+    int setDamage(int itemId, CombatUnit source, CombatUnit target){
+        var atk = source.atk;
+        var def = target.def;
         var dmg = 0;
-        switch (itemMod)
+        switch (itemId)
         {
             case 0:
                 dmg = -atk + def;
@@ -104,7 +233,7 @@ public class CombatSystem : MonoBehaviour
                 dmg = atk;
                 break;
         }
+        dmg = dmg * source.lvl;
         return dmg;
     }
-
 }
