@@ -137,15 +137,20 @@ public class CombatSystem : MonoBehaviour
         if (state == CombatState.PLAYER_TURN){
             SetupDialog();
             PlayerAttack();
-            SetState(CombatState.ENEMY_TURN);
+            if (enemyHP <= 0){
+                SetState(CombatState.WON);
+            }
+            else{
+                SetState(CombatState.ENEMY_TURN);
+            }
         }
     }
 
     public void OnDefense(){
         if (state == CombatState.PLAYER_TURN){
+            SetupDialog();
             var itemId = Inventory.GetComponent<InventoryManager>().GetDefense();
             SetState(CombatState.ENEMY_TURN);
-            SetupDialog();
             var dmg = setDamage(100, enemyUnit, playerUnit);
             PlayerDefense(itemId, dmg);
         }
@@ -168,9 +173,8 @@ public class CombatSystem : MonoBehaviour
     }
 
     void PlayerAttack(){
-        dialog.GetComponent<Animator>().SetBool("isOpen", true);
         
-        var hit_miss = r.Next(playerUnit.acc) -  r.Next(enemyUnit.agi);
+        var hit_miss = r.Next(playerUnit.acc) -  r.Next(enemyUnit.agi) + 3;
         if (hit_miss >= 0){
             var itemId = Inventory.GetComponent<InventoryManager>().GetAttack();
             var dmg = setDamage(itemId, playerUnit, enemyUnit);

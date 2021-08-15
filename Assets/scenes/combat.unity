@@ -694,7 +694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10d458b7942ce74cafecd014f6e5b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyId: 0
   shop: {fileID: 1276983700}
   sceneManager: {fileID: 15617000}
   enemyHP: 0
@@ -1832,9 +1831,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: Next
+      - m_Target: {fileID: 2076785598}
+        m_TargetAssemblyTypeName: CombatSystem, Assembly-CSharp
+        m_MethodName: OnRun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2223,9 +2222,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: Yes
+      - m_Target: {fileID: 2076785598}
+        m_TargetAssemblyTypeName: CombatSystem, Assembly-CSharp
+        m_MethodName: OnDefense
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

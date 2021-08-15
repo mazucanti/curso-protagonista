@@ -16,6 +16,6 @@ public class LoadScenes : MonoBehaviour
     }
 
     public void LoadCombat(){
-        SceneManager.LoadScene("Combat");
+        SceneManager.LoadScene("combat");
     }
 }
